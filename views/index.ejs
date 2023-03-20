@@ -10,7 +10,9 @@
 <h3>Zawartość tabeli/kolekcji pracownicy</h3>
 <% for(let i = 0; i < a.length; i++) { %>
     <tr>
-        <%= a[i].id ;%>
+        <a href="/aktualizacja/<%= a[i]._id ;%>">
+            <%= a[i].id ;%>
+        </a>
         <%= a[i].imie ;%>
         <%= a[i].nazwisko ;%>
         <%= a[i].stanowisko ;%><br>

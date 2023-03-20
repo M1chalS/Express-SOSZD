@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aktualizacja danych</title>
+</head>
+<body>
+
+  <form method="post" action="/aktualizuj/<%= pracownik._id ;%>">
+
+      imie: <input type="text" name="im" value="<%= pracownik.imie ;%>" /> <br />
+      nazwisko: <input type="text" name="naz" value="<%= pracownik.nazwisko ;%>" /> <br />
+      stanowisko: <input type="text" name="st" value="<%= pracownik.stanowisko ;%>" /> <br />
+    <button>Aktualizuj</button>
+  </form>
+
+</body>
+</html>
