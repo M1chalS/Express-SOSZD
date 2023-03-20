@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dane z bazy danych</title>
+</head>
+<body>
+<h3>Zawartość tabeli/kolekcji pracownicy</h3>
+<% for(let i = 0; i < a.length; i++) { %>
+    <tr>
+        <%= a[i].id ;%>
+        <%= a[i].imie ;%>
+        <%= a[i].nazwisko ;%>
+        <%= a[i].stanowisko ;%><br>
+    </tr>
+<% } %>
+</body>
+</html>
