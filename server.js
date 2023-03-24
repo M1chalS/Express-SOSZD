@@ -38,15 +38,10 @@ app.get('/aktualizacja/:id', async (req, res) => {
     res.render("aktualizacja.ejs", { pracownik });
 });
 
-app.get('/usuwanie', (req, res) => {
-    res.sendFile(__dirname + "/usuwanie.html");
-});
-
 app.post('/dodaj', (req, res) => {
     console.log(req);
     const { id, im, naz, st } = req.body;
     pracownicy.insertOne({
-        id: Number(`${ id }`),
         imie: `${ im }`,
         nazwisko: `${ naz }`,
         stanowisko: `${ st }`,
@@ -62,7 +57,7 @@ app.get('/wyswietl', async (req, res) => {
 app.post("/aktualizuj/:id", async (req, res) => {
     const _id = new mongo.ObjectId(req.params.id);
 
-    const { id, im, naz, st } = req.body;
+    const { im, naz, st } = req.body;
     pracownicy.updateOne({ _id }, {
         $set: {
             imie: `${ im }`,
@@ -74,6 +69,14 @@ app.post("/aktualizuj/:id", async (req, res) => {
     res.redirect('/wyswietl');
 });
 
+app.post('/usuwanie/:id', (req, res) => {
+    const _id = new mongo.ObjectId(req.params.id);
+
+    pracownicy.deleteOne({_id: _id});
+
+    res.redirect('/wyswietl')
+});
+
 app.listen(port, () => {
-    console.log("Serwer działa");
+    console.log("Listening on "+port);
 });

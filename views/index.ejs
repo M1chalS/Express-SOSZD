@@ -5,18 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dane z bazy danych</title>
+    <style>
+        .center {
+            width: 100vw;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-<h3>Zawartość tabeli/kolekcji pracownicy</h3>
-<% for(let i = 0; i < a.length; i++) { %>
+<h3 class="center">Zawartość kolekcji pracownicy</h3>
+<p class="center">
+<form action="/wyswietl" method="post">
+    <h4>Filtrowanie</h4>
+    <input type="text" placeholder="Imię" name="imie">
+    <input type="text" placeholder="Nazwisko" name="nazwisko">
+    <input type="text" placeholder="Stanowisko" name="stanowisko">
+    <button>Filtruj</button>
+</form>
+</p>
+<table class="center">
     <tr>
-        <a href="/aktualizacja/<%= a[i]._id ;%>">
-            <%= a[i].id ;%>
-        </a>
-        <%= a[i].imie ;%>
-        <%= a[i].nazwisko ;%>
-        <%= a[i].stanowisko ;%><br>
+        <th>Imię</th>
+        <th>Nazwisko</th>
+        <th>Stanowisko</th>
+        <th>Akcja</th>
     </tr>
-<% } %>
+    <% for(let i = 0; i < a.length; i++) { %>
+        <tr>
+            <td>
+
+                <%= a[i].imie; %>
+
+            </td>
+            <td>
+                <%= a[i].nazwisko; %>
+            </td>
+            <td>
+                <%= a[i].stanowisko; %>
+            </td>
+            <td>
+                <form action="/aktualizacja/<%= a[i]._id; %>" method="get">
+                    <button>Edytuj</button>
+                </form>
+                <form action="/usuwanie/<%= a[i]._id; %>" method="post">
+                    <button>Usuń</button>
+                </form>
+            </td>
+        </tr>
+    <% } %>
+</table>
 </body>
 </html>
