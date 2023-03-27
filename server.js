@@ -50,7 +50,23 @@ app.post('/dodaj', (req, res) => {
 });
 
 app.get('/wyswietl', async (req, res) => {
-    let dane = await pracownicy.find().toArray();
+
+    let dane;
+
+    if(req.query) {
+        const query = req.query;
+
+        if(query.imie) {
+            dane = await pracownicy.find({imie: query.imie}).toArray();
+        } else if(query.nazwisko) {
+            dane = await pracownicy.find({nazwisko: query.nazwisko}).toArray();
+        } else if(query.stanowisko) {
+            dane = await pracownicy.find({stanowisko: query.stanowisko}).toArray();
+        } else {
+            dane = await pracownicy.find().toArray();
+        }
+
+    }
     res.render("index.ejs", { a: dane });
 });
 

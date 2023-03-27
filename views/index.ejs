@@ -10,18 +10,36 @@
             width: 100vw;
             text-align: center;
         }
+
+        .m-left {
+            margin-left: 7vw;
+        }
+
+        .m-right {
+            margin-right: 7vw;
+        }
     </style>
 </head>
 <body>
 <h3 class="center">Zawartość kolekcji pracownicy</h3>
-<p class="center">
-<form action="/wyswietl" method="post">
-    <h4>Filtrowanie</h4>
-    <input type="text" placeholder="Imię" name="imie">
-    <input type="text" placeholder="Nazwisko" name="nazwisko">
-    <input type="text" placeholder="Stanowisko" name="stanowisko">
-    <button>Filtruj</button>
-</form>
+<div style="width: 100vw; display: flex; justify-content: space-between; align-items: center;">
+    <div class="m-left">
+        <form action="/wyswietl" method="get">
+            <h4>Filtrowanie</h4>
+            <input type="text" placeholder="Imię" name="imie">
+            <input type="text" placeholder="Nazwisko" name="nazwisko">
+            <input type="text" placeholder="Stanowisko" name="stanowisko">
+            <button>Filtruj</button>
+            <button form="wyczysc_form">Wyczyść filtr</button>
+        </form>
+        <form id="wyczysc_form" action="/wyswietl" method="get" />
+    </div>
+    <div class="m-right">
+        <form action="/dodaj" method="get">
+            <button>Dodaj nowego pracownika</button>
+        </form>
+    </div>
+</div>
 </p>
 <table class="center">
     <tr>
