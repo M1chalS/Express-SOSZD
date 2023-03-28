@@ -18,6 +18,10 @@
         .m-right {
             margin-right: 7vw;
         }
+
+        .padding {
+            padding: 0.25rem;
+        }
     </style>
 </head>
 <body>
@@ -26,13 +30,19 @@
     <div class="m-left">
         <form action="/wyswietl" method="get">
             <h4>Filtrowanie</h4>
-            <input type="text" placeholder="Imię" name="imie">
-            <input type="text" placeholder="Nazwisko" name="nazwisko">
-            <input type="text" placeholder="Stanowisko" name="stanowisko">
+            <label class="padding">
+                <input type="text" placeholder="Imię" name="imie">
+            </label>
+            <label class="padding">
+                <input type="text" placeholder="Nazwisko" name="nazwisko">
+            </label>
+            <label class="padding">
+                <input type="text" placeholder="Stanowisko" name="stanowisko">
+            </label>
             <button>Filtruj</button>
             <button form="wyczysc_form">Wyczyść filtr</button>
         </form>
-        <form id="wyczysc_form" action="/wyswietl" method="get" />
+        <form id="wyczysc_form" action="/wyswietl" method="get"></form>
     </div>
     <div class="m-right">
         <form action="/dodaj" method="get">
@@ -40,7 +50,6 @@
         </form>
     </div>
 </div>
-</p>
 <table class="center">
     <tr>
         <th>Imię</th>
@@ -51,9 +60,7 @@
     <% for(let i = 0; i < a.length; i++) { %>
         <tr>
             <td>
-
                 <%= a[i].imie; %>
-
             </td>
             <td>
                 <%= a[i].nazwisko; %>

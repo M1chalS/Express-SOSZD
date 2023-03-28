@@ -7,11 +7,11 @@
     "nodemon": "^2.0.21"
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon src/index.js"
   },
   "name": "express2",
   "version": "1.0.0",
-  "main": "polaczenie.js",
+  "main": "src/index.js",
   "keywords": [],
   "author": "",
   "license": "ISC",

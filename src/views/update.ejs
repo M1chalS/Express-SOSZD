@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aktualizacja danych</title>
+    <style>
+        .center {
+            text-align: center;
+            width: 100vw;
+        }
+    </style>
+</head>
+<body>
+<h3 class="center">Aktualizacja danych</h3>
+<form method="post" action="/aktualizuj/<%= pracownik._id; %>">
+    <p class="center"><label for="name">Imie:</label>
+        <input type="text" id="name" name="imie" value="<%= pracownik.imie; %>"/>
+    </p>
+    <p class="center"><label for="surname">Nazwisko:</label>
+        <input id="surname" type="text" name="nazwisko" value="<%= pracownik.nazwisko; %>"/>
+    </p>
+    <p class="center"><label for="position">Stanowisko:</label>
+        <input id="position" type="text" name="stanowisko" value="<%= pracownik.stanowisko; %>"/>
+    </p>
+    <button class="center">Aktualizuj</button>
+</form>
+
+</body>
+</html>

@@ -15,9 +15,15 @@
 <body>
 <form method="post" action="/dodaj">
   <h3 class="center">Dodaj dane</h3>
-  <p class="center">Imie: <input type="text" name="im" /> </p>
-  <p class="center">Nazwisko: <input type="text" name="naz" /> <p />
-  <p class="center">Stanowisko: <input type="text" name="st" /> <p />
+  <p class="center"><label for="name">Imie:</label>
+    <input type="text" id="name" name="imie"/>
+  </p>
+  <p class="center"><label for="surname">Nazwisko:</label>
+    <input id="surname" type="text" name="nazwisko"/>
+  </p>
+  <p class="center"><label for="position">Stanowisko:</label>
+    <input id="position" type="text" name="stanowisko"/>
+  </p>
   <button class="center">Dodaj dane</button>
 </form>
 </body>
